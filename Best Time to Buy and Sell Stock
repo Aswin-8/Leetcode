@@ -1,0 +1,15 @@
+
+/*Leetcode problem-Best Time to Buy and Sell Stock*/
+int maxProfit(int* prices, int pricesSize) 
+{
+    if(pricesSize==0)
+        return 0;                      //if the size of prices is 0 then returning 0
+    int i,buy=prices[0],profit,maxprofit=0;
+    for(i=1;i<pricesSize;i++)
+    {
+        buy=prices[i]<buy?prices[i]:buy;                       //checking buy is less than prices,if buy is less then updating buy to that price
+        profit=prices[i]-buy;                                  //finding the profit
+        maxprofit=profit>maxprofit?profit:maxprofit;           //if profit is greater than maxprofit then updating maxprofit to that profit
+    }
+    return maxprofit;                                         //returning the maxprofit
+}
