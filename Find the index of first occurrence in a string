@@ -1,9 +1,9 @@
 int strStr(char* haystack, char* needle) 
 {
-    int i=0,l=strlen(needle);
+    int i=0;
     while(haystack[i]!='\0')
     {
-        if(!strncmp(haystack+i,needle,l))
+        if(!strncmp(haystack+i,needle,strlen(needle))
             return i;
         i++;
     }
