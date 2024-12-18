@@ -1,0 +1,21 @@
+int* finalPrices(int* prices, int pricesSize, int* returnSize) 
+{
+    int i,j,k=0,flag=0;
+    for(i=0;i<pricesSize;i++)
+    {
+        for(j=1+i;j<pricesSize;j++)
+        {
+            if(prices[j]<=prices[i])
+            {
+                prices[k++]=prices[i]-prices[j];
+                flag=1;
+                break;
+            }
+        }
+        if(!flag)
+            prices[k++]=prices[i];
+        flag=0;
+    }
+    *returnSize=pricesSize;
+    return prices;
+}
